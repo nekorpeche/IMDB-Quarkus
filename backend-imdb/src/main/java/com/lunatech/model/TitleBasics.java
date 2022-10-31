@@ -36,10 +36,22 @@ public class TitleBasics extends PanacheEntityBase {
     @OneToOne(mappedBy = "titleBasics")
     private TitleRatings titleRatings;
 
+    /**
+     * Find by primary title or original title list.
+     *
+     * @param keyword the keyword
+     * @return the list
+     */
     public static List<TitleBasics> findByPrimaryTitleOrOriginalTitle(String keyword) {
         return find("lower(primaryTitle) like ?1 or lower(originalTitle) like ?1", "%" + keyword.toLowerCase() + "%").page(Page.ofSize(10)).list();
     }
 
+    /**
+     * Find top rated movies by genre list.
+     *
+     * @param genre the genre
+     * @return the list
+     */
     public static List<TitleBasics> findTopRatedMoviesByGenre(String genre) {
         return find(" lower(genres) like ?1 order by titleRatings.averageRating DESC", "%" + genre.toLowerCase() + "%").page(Page.ofSize(10)).list();
     }

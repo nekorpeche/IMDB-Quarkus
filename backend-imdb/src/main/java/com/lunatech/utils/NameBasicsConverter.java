@@ -16,7 +16,6 @@ public class NameBasicsConverter implements AttributeConverter<List<NameBasics>,
         if (attribute == null) {
             return null;
         }
-
         StringBuilder sb = new StringBuilder();
         for (NameBasics nameBasic : attribute) {
             if (nameBasic.getNconst() != null && !nameBasic.getNconst()
@@ -34,7 +33,6 @@ public class NameBasicsConverter implements AttributeConverter<List<NameBasics>,
         if (dbData == null || dbData.isEmpty()) {
             return nameBasicsList;
         }
-
         String[] pieces = dbData.split(SEPARATOR);
         for (String id : pieces) {
             NameBasics nm = NameBasics.findById(id);

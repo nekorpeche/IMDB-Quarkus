@@ -12,6 +12,11 @@ import javax.ws.rs.core.MediaType;
 @Produces(MediaType.APPLICATION_JSON)
 @Consumes(MediaType.APPLICATION_JSON)
 public class TitleCrewResource {
+    /**
+     * Count title crew.
+     *
+     * @return the title crew
+     */
     @GET
     public TitleCrew count() {
         return TitleCrew.find("order by tconst").firstResult();

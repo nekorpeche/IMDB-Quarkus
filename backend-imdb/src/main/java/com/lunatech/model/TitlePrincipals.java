@@ -6,6 +6,7 @@ import lombok.*;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.List;
 
 @Getter
 @Setter
@@ -37,6 +38,27 @@ public class TitlePrincipals extends PanacheEntityBase implements Serializable {
     private String category;
     private String job;
     private String characters;
+
+    /**
+     * Gets title by tconst.
+     *
+     * @param tconst the tconst
+     * @return the title by tconst
+     */
+    public static List<TitlePrincipals> getTitleByTconst(String tconst) {
+        return find("lower(tconst) = ?1 ", tconst).list();
+    }
+
+    /**
+     * Gets title by nconst.
+     *
+     * @param nconst the nconst
+     * @return the title by nconst
+     */
+    public static List<TitlePrincipals> getTitleByNconst(String nconst) {
+        return find("lower(nconst) = ?1 ", nconst).list();
+    }
+
 
     @Override
     public boolean equals(Object o) {

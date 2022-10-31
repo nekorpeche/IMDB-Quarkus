@@ -17,6 +17,9 @@ import java.util.List;
 @Table(name = "title_crew")
 public class TitleCrew extends PanacheEntityBase {
 
+    /**
+     * The Title basics.
+     */
     @JsonBackReference
     @OneToOne()
     @JoinColumn(name = "tconst")
