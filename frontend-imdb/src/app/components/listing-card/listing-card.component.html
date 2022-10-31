@@ -1,0 +1,15 @@
+<div class="row">
+  <div class="card" style="width: 18rem;">
+    <img alt="..." class="card-img-top" src="../../../assets/default-img.png">
+    <div class="card-body">
+      <h5 class="card-title">{{titleBasic?.primaryTitle}}</h5>
+      <p class="card-text">Genres : {{titleBasic?.genres || "Not specified"}}</p>
+      <p class="card-text">Average Rating : {{titleBasic?.titleRatings?.averageRating || "Not rated"}}/10</p>
+    </div>
+    <ul class="list-group list-unstyled">
+      <li *ngFor="let titlePrincipal of titleBasic?.titlePrincipals" class="card-text">
+        {{titlePrincipal.category | titlecase}} : {{titlePrincipal.nameBasics?.primaryName}}
+      </li>
+    </ul>
+  </div>
+</div>

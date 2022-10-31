@@ -1,0 +1,30 @@
+<div class="row height d-flex justify-content-center align-items-center">
+  <div class="col m-4">
+    <div class="input-group">
+      <select #criteria (change)="searchBy(criteria.value)" class="form-select">
+        <option class="dropdown-item" href="#" value="movie">Movie</option>
+        <option class="dropdown-item" href="#" value="genre">Genre</option>
+      </select>
+      <input #search
+             (keyup.enter)="findMovies(search.value)"
+             aria-label="Text input with dropdown button" class="form-control"
+             type="text">
+    </div>
+  </div>
+  <div class="col">
+    <button (click)="findMovies(search.value)" class="btn btn-primary" type="submit">Search</button>
+  </div>
+</div>
+
+<div class="row row-cols-1 row-cols-md-3 g-4">
+  <ng-container *ngIf="movies?.length; else noMovies">
+    <div *ngFor="let movie of movies"
+    >
+      <app-listing-card [titleBasic]="movie"></app-listing-card>
+    </div>
+  </ng-container>
+  <ng-template #noMovies>
+    <p>No movies found</p>
+  </ng-template>
+</div>
+
