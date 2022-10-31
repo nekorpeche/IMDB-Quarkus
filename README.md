@@ -1,7 +1,6 @@
 # lunatech-imdb-assessment-template
 
-Please use this readme as your projects readme. You can find instructions for
-the assignment in the [`INSTRUCTIONS.md`](INSTRUCTIONS.md) file.
+La documentation du projet est disponible ici [documentation.pdf](IMDB-lunatech-documentation.pdf)
 
 Technologies :
 
