@@ -1,4 +1,4 @@
-# lunatech-imdb-assessment-template
+# IMDB-Quarkus
 
 La documentation du projet est disponible ici [documentation.pdf](IMDB-lunatech-documentation.pdf)
 
